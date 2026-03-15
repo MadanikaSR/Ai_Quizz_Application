@@ -21,7 +21,7 @@ The application is built using **Next.js, Django REST Framework, and PostgreSQL*
   * Topic
   * Difficulty level
   * Number of questions
-* Questions are generated using **Google Gemini AI**
+* Questions are generated using **Google Gemini AI/Open AI/Groq AI**
 
 ### Quiz Attempt System
 
@@ -46,10 +46,7 @@ The application is built using **Next.js, Django REST Framework, and PostgreSQL*
 * Users can also create custom categories
 
 ### Analytics
-
-* View overall performance
 * Track number of quizzes attempted
-* Category based performance insights
 
 ---
 
@@ -71,7 +68,7 @@ The application is built using **Next.js, Django REST Framework, and PostgreSQL*
 
 ### AI Service
 
-* Google Gemini API (can be replaced with OpenAI or other providers)
+* Groq API (can be replaced with OpenAI or other providers)
 
 ---
 
@@ -344,8 +341,6 @@ Ensuring the quiz timer functions correctly during the quiz attempt.
 * Quiz attempt tracking
 * Quiz history and retake
 * Quiz sharing through link
-* Custom categories
-* Quiz analytics dashboard
 
 ---
 
@@ -357,4 +352,4 @@ Leaderboard functionality was removed to keep the application simple and focused
 
 # Author
 
-Developed as part of a Full Stack Developer assignment.
+Developed as part of an Assignment.
