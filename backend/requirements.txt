@@ -1,5 +1,6 @@
 django
 djangorestframework
+djangorestframework-simplejwt
 django-cors-headers
 groq
 google-generativeai
@@ -7,4 +8,5 @@ python-dotenv
 requests
 gunicorn
 dj-database-url
+psycopg2-binary
 whitenoise
