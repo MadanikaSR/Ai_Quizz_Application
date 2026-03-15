@@ -304,13 +304,17 @@ http://localhost:3000
 
 # Deployment
 
-### Frontend
+### Frontend (Next.js)
 
 Deployed using **Vercel**
+- **Root Directory**: `frontend`
+- **Environment Variable**: `NEXT_PUBLIC_API_URL` set to your Render backend URL.
 
-### Backend
+### Backend (Django)
 
 Deployed using **Render**
+- **Root Directory**: `backend`
+- **Environment Variables**: `DATABASE_URL`, `SECRET_KEY`, `DEBUG=False`, `ALLOWED_HOSTS`.
 
 ### Database
 
