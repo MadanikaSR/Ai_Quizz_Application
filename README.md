@@ -314,6 +314,8 @@ Deployed using **Vercel**
 
 Deployed using **Render**
 - **Root Directory**: `backend`
+- **Build Command**: `./build.sh`
+- **Start Command**: `gunicorn ai_quiz.wsgi:application`
 - **Environment Variables**: `DATABASE_URL`, `SECRET_KEY`, `DEBUG=False`, `ALLOWED_HOSTS`.
 
 ### Database

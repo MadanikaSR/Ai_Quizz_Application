@@ -29,9 +29,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-50ib@=4y_8vzn*zqmtsl*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
-if ALLOWED_HOSTS == ['']:
-    ALLOWED_HOSTS = ['*'] # Fallback for development
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
+
+# Render uses its own SSL termination, so we need to trust the proxy header
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', 'False') == 'True'
 
 
 # Application definition
@@ -150,3 +152,14 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True  # For dev environments
+
+# Or be more specific in production:
+CORS_ALLOWED_ORIGINS = [
+    "https://ai-quizz-application.vercel.app",
+    "http://localhost:3000",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://ai-quizz-application.vercel.app",
+    "https://ai-quizz-application-1.onrender.com",
+]

@@ -1,8 +1,19 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
+const getBaseURL = () => {
+  const envUrl = process.env.NEXT_PUBLIC_API_URL;
+  if (!envUrl) return 'http://localhost:8000/api/';
+  
+  // Ensure the URL ends with /api/
+  let url = envUrl.trim();
+  if (!url.endsWith('/')) url += '/';
+  if (!url.endsWith('/api/')) url += 'api/';
+  return url;
+};
+
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/',
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json',
   },
